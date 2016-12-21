@@ -9,7 +9,9 @@ import { HeroDetailComponent } from './hero-detail.component';
 import { HeroesComponent }     from './heroes.component';
 import { HeroService} from './hero.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AppRoutingComponent } from './app-routing/app-routing.component';
 
+import { AppRoutingModule }     from './app-routing/app-routing.module';
 
 
 
@@ -21,31 +23,32 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HeroDetailComponent,
     HeroesComponent,
     DashboardComponent,
-    
+        
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-     {
-      path: 'heroes',
-      component: HeroesComponent
-     },
-     {
-      path: 'detail/:id',
-      component: HeroDetailComponent
-     },
-     {
-      path: 'dashboard',
-      component: DashboardComponent
-     },
-     {
-      path: '',
-      redirectTo: '/dashboard',
-      pathMatch: 'full'
-     }
-    ])
+    AppRoutingModule
+    // RouterModule.forRoot([
+    //  {
+    //   path: 'heroes',
+    //   component: HeroesComponent
+    //  },
+    //  {
+    //   path: 'detail/:id',
+    //   component: HeroDetailComponent
+    //  },
+    //  {
+    //   path: 'dashboard',
+    //   component: DashboardComponent
+    //  },
+    //  {
+    //   path: '',
+    //   redirectTo: '/dashboard',
+    //   pathMatch: 'full'
+    //  }
+    //])
   ],
   providers: [HeroService],
   bootstrap: [AppComponent]
